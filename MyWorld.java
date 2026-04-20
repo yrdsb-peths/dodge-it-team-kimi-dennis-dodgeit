@@ -11,6 +11,6 @@ public class MyWorld extends World {
         
         Marble marble = new Marble();
         addObject(marble,500,300);
-
+        
     }
 }

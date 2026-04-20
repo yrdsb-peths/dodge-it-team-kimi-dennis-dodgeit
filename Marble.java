@@ -5,10 +5,17 @@ public class Marble extends Actor
     
     public void act()
     {
-        move(-2);
-        
+        move(-10);
+            
         if(getX() <= 0){
             resetBanana();
+        }
+        
+        if(isTouching(Hero.class))
+        {
+            Sadface sadFace = new Sadface();
+            getWorld().addObject(sadFace, 300, 200);
+            getWorld().removeObject(this);
         }
     }
     
