@@ -7,10 +7,10 @@ public class MyWorld extends World {
     
     
         Hero hero = new Hero();
-        addObject(hero,200,200);
+        addObject(hero,100,300);
         
         Marble marble = new Marble();
-        addObject(marble,500,200);
+        addObject(marble,500,300);
 
     }
 }
