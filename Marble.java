@@ -2,24 +2,32 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Marble extends Actor
 {
+    private static GreenfootImage marble;
+    private boolean hasHit = false;
+    private int cooldown = 0;
+    public Marble()
+    {
+        marble = new GreenfootImage("gold-ball.png");
+        setImage(marble);
+    }
     
     public void act()
     {
         move(-10);
             
-        if(getX() <= 0){
-            resetBanana();
-        }
-        
-        if(isTouching(Hero.class))
+        if(getX() <= 0)
         {
-            Sadface sadFace = new Sadface();
-            getWorld().addObject(sadFace, 300, 200);
-            getWorld().removeObject(this);
+            resetMarble();
+        }
+        Hero hero = (Hero) getOneIntersectingObject(Hero.class);
+
+        if(hero != null && hero.canBeHit())
+        {
+            hero.gotHit();
         }
     }
     
-    public void resetBanana()
+    public void resetMarble()
     {
         int x = Greenfoot.getRandomNumber(2);
         if(x == 0){
