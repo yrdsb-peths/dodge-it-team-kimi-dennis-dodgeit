@@ -2,6 +2,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Marble extends Actor
 {
+    private static GreenfootImage marble;
+    
+    public Marble()
+    {
+        marble = new GreenfootImage("gold-ball.png");
+        setImage(marble);
+    }
     
     public void act()
     {
