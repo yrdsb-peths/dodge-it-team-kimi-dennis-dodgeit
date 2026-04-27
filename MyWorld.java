@@ -3,9 +3,7 @@ import greenfoot.*;
 public class MyWorld extends World {
     public MyWorld() {
         super(600, 400, 1);
-    
-    
-    Hero hero = new Hero();
-    addObject(hero,200,200);
+        Background bc = new Background();
+        addObject(bc, 300, 190);
     }
 }
